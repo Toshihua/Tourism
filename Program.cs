@@ -2,6 +2,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddSession(); // only if you plan to use Session
 
 var app = builder.Build();
 
@@ -9,26 +10,19 @@ var app = builder.Build();
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
 
 app.UseHttpsRedirection();
+app.UseStaticFiles();   // serve CSS/JS/images
 app.UseRouting();
 
 app.UseAuthorization();
+app.UseSession();       // if using Session
 
-app.MapStaticAssets();
-
-app.MapControllerRoute(
-    name: "login",
-    pattern: "Login",
-    defaults: new { controller = "Account", action = "Login" });
-
+// 👇 Default route points to Account/Login
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Account}/{action=Login}/{id?}")
-    .WithStaticAssets();
-
+    pattern: "{controller=Account}/{action=Login}/{id?}");
 
 app.Run();
