@@ -2,3 +2,41 @@
     ViewData["Home"] = "Home Page";
 }
 <h1>Tosh to the World</h1>
+<div id="tourism" class="carousel slide">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#tourism" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#tourism" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#tourism" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="~/image/arc.png" class="d-block w-100" alt="arc">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Morong Arc</h5>
+                <p>Featuring the boundary of Morong and Cardona, Rizal.</p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="~/image/church.png" class="d-block w-100" alt="church">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>St. Jerome Parish</h5>
+                <p>Featuring the historical church of Morong, Rizal.</p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="~/image/komandansiya.png" class="d-block w-100" alt="komandansiya">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>The Old Municipal Hall</h5>
+                <p>The first municipal hall of Morong and now called Komandansiya.</p>
+            </div>
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#tourism" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#tourism" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
